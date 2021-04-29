@@ -1,5 +1,5 @@
 package application.controllers;
 
-public class MoveInChecklistController {
+public class MoveInChecklistController extends Controller {
 
 }
