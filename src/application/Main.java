@@ -26,17 +26,25 @@ public class Main extends Application {
 			Scene moveInChecklistScene = new Scene(moveInChecklistParent,675,425);
 			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
+			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RootLayout.fxml"));
+			Scene roomDesignScene = new Scene(roomDesignParent,675,425);
+			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
 			// Add all of the scenes to the scene switcher
 			SceneSwitcher.SetRoot(primaryStage);
 			SceneSwitcher.AddScene(mainScene, "main");
 			SceneSwitcher.AddScene(homeScene, "home");
 			SceneSwitcher.AddScene(moveInChecklistScene, "move");
+			SceneSwitcher.AddScene(roomDesignScene, "room");
+
 			
-			primaryStage.setScene(homeScene);
+			primaryStage.setScene(roomDesignScene);
 			primaryStage.show();
 		
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+    	
+    	
     }
 }

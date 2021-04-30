@@ -28,6 +28,9 @@
             <Font name="Century Gothic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="joinBtn" layoutX="373.0" layoutY="220.0" prefHeight="49.0" prefWidth="224.0" promptText="Enter code to join existing room..." />
+      <TextField fx:id="joinBtn" layoutX="373.0" layoutY="220.0" prefHeight="49.0" prefWidth="224.0" promptText="Enter code to join existing room...">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font></TextField>
    </children>
 </Pane>
