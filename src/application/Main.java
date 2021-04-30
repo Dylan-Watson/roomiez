@@ -15,15 +15,15 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
     	try {
 			Parent mainParent = FXMLLoader.load(getClass().getResource("/application/views/Main.fxml"));
-			Scene mainScene = new Scene(mainParent,400,400);
+			Scene mainScene = new Scene(mainParent,675,425);
 			mainScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			Parent homeParent = FXMLLoader.load(getClass().getResource("/application/views/HomeScreen.fxml"));
-			Scene homeScene = new Scene(homeParent,400,400);
+			Scene homeScene = new Scene(homeParent,675,425);
 			homeScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());			
 			
 			Parent moveInChecklistParent = FXMLLoader.load(getClass().getResource("/application/views/MoveInChecklist.fxml"));
-			Scene moveInChecklistScene = new Scene(moveInChecklistParent,400,400);
+			Scene moveInChecklistScene = new Scene(moveInChecklistParent,675,425);
 			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			// Add all of the scenes to the scene switcher
@@ -32,7 +32,7 @@ public class Main extends Application {
 			SceneSwitcher.AddScene(homeScene, "home");
 			SceneSwitcher.AddScene(moveInChecklistScene, "move");
 			
-			primaryStage.setScene(mainScene);
+			primaryStage.setScene(homeScene);
 			primaryStage.show();
 		
 		} catch(Exception e) {
