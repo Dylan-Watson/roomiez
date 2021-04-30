@@ -16,7 +16,13 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-public class RootLayour extends AnchorPane{
+public class RootLayout extends AnchorPane{
+	
+	    @FXML SplitPane base_pane;
+	    @FXML AnchorPane right_pane;
+	    @FXML VBox left_pane;
+
+	    private DragIcon mDragOverIcon = null;
 
     public RootLayout() {
 
@@ -36,6 +42,21 @@ public class RootLayour extends AnchorPane{
     }
 
     @FXML
-    private void initialize() {
+    private void initialize() 
+    {
+    	mDragOverIcon = new DragIcon();
+    	 
+        mDragOverIcon.setVisible(false);
+        mDragOverIcon.setOpacity(0.65);
+        getChildren().add(mDragOverIcon); 
+
+        for (int i = 0; i < 7; i++) 
+        {
+     
+            DragIcon icn = new DragIcon();
+     
+            icn.setType(DragIconType.values()[i]);
+            left_pane.getChildren().add(icn);
+        }
     }
 }

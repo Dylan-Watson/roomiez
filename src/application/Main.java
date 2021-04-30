@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
  
 public class Main extends Application {
@@ -13,6 +14,9 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+    	
+    	//BorderPane root = new BorderPane();
+    	
     	try {
 			Parent mainParent = FXMLLoader.load(getClass().getResource("/application/views/Main.fxml"));
 			Scene mainScene = new Scene(mainParent,675,425);
@@ -26,7 +30,7 @@ public class Main extends Application {
 			Scene moveInChecklistScene = new Scene(moveInChecklistParent,675,425);
 			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
-			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RootLayout.fxml"));
+			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/models/RootLayout.fxml"));
 			Scene roomDesignScene = new Scene(roomDesignParent,675,425);
 			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
@@ -45,6 +49,6 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
     	
-    	
+    	//root.setCenter(new RootLayout());
     }
 }

@@ -11,26 +11,67 @@ import javafx.scene.layout.AnchorPane;
 
 public class DragIcon extends AnchorPane{
 
-    public DragIcon() {
-    	
-    	@FXML AnchorPane root_pane;
+	private DragIconType mType;
+    
+	public DragIcon() {
+	    
+	    FXMLLoader fxmlLoader = new FXMLLoader(
+	    getClass().getResource("/DragIcon.fxml")
+	    );
+	        
+	    fxmlLoader.setRoot(this); 
+	    fxmlLoader.setController(this);
+	        
+	    try { 
+	    fxmlLoader.load();
+	        
+	    } catch (IOException exception) {
+	    throw new RuntimeException(exception);
+	    }
+	}
+	    
+	@FXML
+	private void initialize() {}
 
-        FXMLLoader fxmlLoader = new FXMLLoader(
-            getClass().getResource("/DragIcon.fxml")
-        );
+	public DragIconType getType() { return mType;}
 
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
+	public void setType(DragIconType type) {
 
-        try {
-            fxmlLoader.load();
+	    mType = type;
 
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-    }
+	    getStyleClass().clear();
+	    getStyleClass().add("dragicon");
+	    switch (mType) {
+	        
+	    case blue:
+	    getStyleClass().add("icon-blue");
+	    break;
 
-    @FXML
-    private void initialize() {
-    }
-}
+	    case red:
+	    getStyleClass().add("icon-red");            
+	    break;
+
+	    case green:
+	    getStyleClass().add("icon-green");
+	    break;
+
+	    case grey:
+	    getStyleClass().add("icon-grey");
+	    break;
+
+	    case purple:
+	    getStyleClass().add("icon-purple");
+	    break;
+
+	    case yellow:
+	    getStyleClass().add("icon-yellow");
+	    break;
+
+	    case black:
+	    getStyleClass().add("icon-black");
+	    break;
+	        
+	    default:
+	    break;
+	    }
+	}
