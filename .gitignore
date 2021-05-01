@@ -1,3 +1,7 @@
+# Eclipse Config Files
+.classpath
+.project
+
 # Compiled class file
 *.class
 
