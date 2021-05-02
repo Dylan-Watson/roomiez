@@ -33,6 +33,10 @@ public class Main extends Application {
 			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/models/RootLayout.fxml"));
 			Scene roomDesignScene = new Scene(roomDesignParent,675,425);
 			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+
+			Parent groceryListParent = FXMLLoader.load(getClass().getResource("/application/views/GroceryList.fxml"));
+			Scene groceryListScene = new Scene(groceryListParent,675,425);
+			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			// Add all of the scenes to the scene switcher
 			SceneSwitcher.SetRoot(primaryStage);
@@ -40,9 +44,10 @@ public class Main extends Application {
 			SceneSwitcher.AddScene(homeScene, "home");
 			SceneSwitcher.AddScene(moveInChecklistScene, "move");
 			SceneSwitcher.AddScene(roomDesignScene, "room");
+			SceneSwitcher.AddScene(groceryListScene, "grocery");
 
 			
-			primaryStage.setScene(roomDesignScene);
+			primaryStage.setScene(homeScene);
 			primaryStage.show();
 		
 		} catch(Exception e) {

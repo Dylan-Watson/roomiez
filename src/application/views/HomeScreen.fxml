@@ -6,17 +6,17 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="708.0" style="-fx-background-color: #264653;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.HomeController">
    <children>
-      <Button fx:id="moveInBtn" layoutX="200.0" layoutY="63.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="309.0" style="-fx-background-color: #f4a261;" text="Move-In Checklist">
+      <Button fx:id="moveInBtn" layoutX="200.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleMoveInBtnClick" prefHeight="61.0" prefWidth="309.0" style="-fx-background-color: #f4a261;" text="Move-In Checklist">
          <font>
             <Font name="Century Gothic Bold" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="roomBtn" layoutX="200.0" layoutY="228.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="309.0" style="-fx-background-color: #f4a261;" text="Room Design">
+      <Button fx:id="roomBtn" layoutX="200.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleRoomDesignBtnClick" prefHeight="61.0" prefWidth="309.0" style="-fx-background-color: #f4a261;" text="Room Design">
          <font>
             <Font name="Century Gothic Bold" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="groceryBtn" layoutX="200.0" layoutY="145.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="309.0" style="-fx-background-color: #f4a261;" text="Grocery List">
+      <Button fx:id="groceryBtn" layoutX="200.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleGroceryListBtnClick" prefHeight="61.0" prefWidth="309.0" style="-fx-background-color: #f4a261;" text="Grocery List">
          <font>
             <Font name="Century Gothic Bold" size="25.0" />
          </font>
