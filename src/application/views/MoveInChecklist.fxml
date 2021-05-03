@@ -12,12 +12,12 @@
             <Font name="Century Gothic Bold" size="30.0" />
          </font>
       </Text>
-      <Button fx:id="addBtn" layoutX="156.0" layoutY="304.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="72.0" style="-fx-background-color: #3caea3;" text="+">
+      <Button fx:id="addBtn" layoutX="156.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleAddBtnClicked" prefHeight="51.0" prefWidth="72.0" style="-fx-background-color: #3caea3;" text="+">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
       </Button>
-      <Button fx:id="subtractBtn" layoutX="379.0" layoutY="304.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="72.0" style="-fx-background-color: #3caea3;" text="-">
+      <Button fx:id="subtractBtn" layoutX="379.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleSubBtnClicked" prefHeight="71.0" prefWidth="72.0" style="-fx-background-color: #3caea3;" text="-">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
