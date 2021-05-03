@@ -36,7 +36,7 @@ public class Main extends Application {
 
 			Parent groceryListParent = FXMLLoader.load(getClass().getResource("/application/views/GroceryList.fxml"));
 			Scene groceryListScene = new Scene(groceryListParent,675,425);
-			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			groceryListScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			// Add all of the scenes to the scene switcher
 			SceneSwitcher.SetRoot(primaryStage);
