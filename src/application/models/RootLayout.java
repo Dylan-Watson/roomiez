@@ -67,7 +67,7 @@ public class RootLayout extends AnchorPane{
         buildDragHandlers();
     }
     
-    pprivate void buildDragHandlers() {
+    private void buildDragHandlers() {
         
     //drag over transition to move widget form left pane to right pane
     mIconDragOverRoot = new EventHandler <DragEvent>() {
@@ -95,8 +95,7 @@ public class RootLayout extends AnchorPane{
  
             mDragOverIcon.relocateToPoint(
                     new Point2D(event.getSceneX(), event.getSceneY())
-                )
-            );
+                );
 
             event.consume();
         }
@@ -133,7 +132,7 @@ public class RootLayout extends AnchorPane{
         event.consume();
     }
     });
-});
+};
     
     private void addDragDetection(DragIcon dragIcon) {
 
