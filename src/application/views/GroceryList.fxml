@@ -5,7 +5,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #264653;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #264653;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.GroceryListController">
    <children>
       <Text fill="#f4a261" layoutX="156.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grocery List" textAlignment="CENTER" wrappingWidth="287.13671875">
          <font>
@@ -20,6 +20,11 @@
       <Button fx:id="subtractBtn" layoutX="379.0" layoutY="304.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="72.0" style="-fx-background-color: #3caea3;" text="-">
          <font>
             <Font name="System Bold" size="33.0" />
+         </font>
+      </Button>
+      <Button fx:id="backBtn" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleBackGrocery" prefHeight="37.0" prefWidth="72.0" style="-fx-background-color: #e76f51;" text="&lt;">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Button>
    </children>
