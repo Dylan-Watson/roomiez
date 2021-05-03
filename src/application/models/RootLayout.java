@@ -26,9 +26,7 @@ public class RootLayout extends AnchorPane{
 
     public RootLayout() {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(
-            getClass().getResource("/RootLayout.fxml")
-        );
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/RootLayout.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -44,6 +42,7 @@ public class RootLayout extends AnchorPane{
     @FXML
     private void initialize() 
     {
+    	
     	mDragOverIcon = new DragIcon();
     	 
         mDragOverIcon.setVisible(false);
