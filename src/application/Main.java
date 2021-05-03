@@ -30,7 +30,7 @@ public class Main extends Application {
 			Scene moveInChecklistScene = new Scene(moveInChecklistParent,675,425);
 			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
-			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/models/RootLayout.fxml"));
+			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RootLayout.fxml"));
 			Scene roomDesignScene = new Scene(roomDesignParent,675,425);
 			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
