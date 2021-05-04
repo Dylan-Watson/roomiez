@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
  
 public class Main extends Application {
@@ -32,12 +33,15 @@ public class Main extends Application {
 			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RoomDesign.fxml"));
-			Canvas canvas = new Canvas(675,425);
-			GraphicsContext GC = canvas.getGraphicsContext2D();
-			GC.strokeText("Hello Canvas", 150, 100);
-			Pane roomDesignCanvas = new Pane();
-			roomDesignCanvas.getChildren().add(canvas);
-			Scene roomDesignScene = new Scene(roomDesignCanvas);
+			//Canvas canvas = new Canvas(675,425);
+			//GraphicsContext GC = canvas.getGraphicsContext2D();
+			//GC.setLineWidth(3.0);
+			//GC.setFill(Color.DARKSEAGREEN);
+			//GC.strokeRect(10, 10, 50, 50);
+			//Pane roomDesignCanvas = new Pane();
+			//roomDesignCanvas.getChildren().add(canvas);
+			//Scene roomDesignScene = new Scene(roomDesignCanvas);
+			Scene roomDesignScene = new Scene(roomDesignParent,600,425);
 			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
 			Parent groceryListParent = FXMLLoader.load(getClass().getResource("/application/views/GroceryList.fxml"));
