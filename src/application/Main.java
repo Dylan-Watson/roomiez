@@ -10,7 +10,7 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+    //this is a test
     @Override
     public void start(Stage primaryStage) {
     	
@@ -46,7 +46,7 @@ public class Main extends Application {
 			SceneSwitcher.AddScene(groceryListScene, "grocery");
 
 			
-			primaryStage.setScene(homeScene);
+			primaryStage.setScene(mainScene);
 			primaryStage.show();
 		
 		} catch(Exception e) {

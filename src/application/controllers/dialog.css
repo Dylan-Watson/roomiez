@@ -1,0 +1,22 @@
+.dialog {
+	-fx-background-color:  "#264653";
+}
+
+.dialog > *.button-bar > *.container {
+	-fx-background-color:  "#264653";
+}
+
+.dialog > *.label.content {
+	-fx-background-color:  "#264653";
+}
+
+.dialog:header *.header-panel {
+	-fx-background-color:  "#264653";
+}
+
+.dialog:header *.header-panel *.label {
+	-fx-font-size: 18px;
+    -fx-font-style: italic;
+    -fx-font-color: white;
+    -fx-text-fill: white;
+}
