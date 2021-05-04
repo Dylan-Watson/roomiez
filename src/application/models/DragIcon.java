@@ -77,7 +77,7 @@ public class DragIcon extends AnchorPane{
 	    }
 	}
 	
-	public void relocateToPoint (Point2D p) {
+	/*public void relocateToPoint (Point2D p) {
 
 	    Point2D localCoords = new Point2D(getParent().sceneToLocal(p));
 
@@ -87,5 +87,5 @@ public class DragIcon extends AnchorPane{
 	        (int) (localCoords.getY() -
 	              (getBoundsInLocal().getHeight() / 2))
 	    );
-	}
+	}*/
 }
