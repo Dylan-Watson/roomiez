@@ -19,6 +19,14 @@ public class SceneSwitcher {
 	private static ArrayList<SceneContainer> scenes = new ArrayList<SceneContainer>(); // ArrayList to contain all scenes in the application
 	
 	/**
+	 * Accessor method for the primaryStage variable
+	 * @return The primary stage
+	 */
+	public static Stage GetRoot() {
+		return primaryStage;
+	}
+	
+	/**
 	 * Set the primary stage
 	 * @param _primaryStage primary stage (from start method)
 	 */

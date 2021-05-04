@@ -29,3 +29,29 @@
 .icon-purple {
     -fx-background-color: purple;
 }
+
+/* For the checklist */
+
+.scroll-pane {
+	-fx-background: "#264653";
+	-fx-background-color: "#264653";
+}
+
+.check-box .box {
+
+-fx-background-color:  #264653;
+-fx-border-color:grey;
+-fx-border-radius:3px; 
+
+}
+
+.check-box:selected .mark {
+
+-fx-background-color: #f4a261;
+
+}
+
+.check-box:selected .box {
+
+-fx-background-color: #264653;
+}
