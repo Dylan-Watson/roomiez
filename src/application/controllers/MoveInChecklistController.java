@@ -9,6 +9,7 @@ import java.util.Optional;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Dialog;
@@ -28,6 +29,7 @@ public class MoveInChecklistController extends Controller {
 	@FXML public ScrollPane checklistPane;
 	@FXML public VBox checklistVBox;
 	public ArrayList<ChecklistItem> checklistItems = new ArrayList<ChecklistItem>();
+	Model model = new Model();
 	
 	@FXML
 	public void handleBackMove(ActionEvent e) {
@@ -58,6 +60,14 @@ public class MoveInChecklistController extends Controller {
 		HBox itemBox = new HBox();
 		itemBox.setSpacing(30);
 		itemBox.setAlignment(Pos.CENTER_LEFT);
+		itemBox.getStyleClass().add("hbox");
+		itemBox.setPrefWidth(400);
+		itemBox.setPadding(new Insets(0,10,0,10));
+		itemBox.setOnMouseClicked(clickEvent -> {
+			for(ChecklistItem item : checklistItems)
+				item.getContainer().getStyleClass().remove("hbox-active");
+			((HBox)(clickEvent.getSource())).getStyleClass().add("hbox-active");
+		});
 		
 		ChecklistItem checklistItem = new ChecklistItem(text, itemBox);
 		checklistItems.add(checklistItem);
@@ -75,20 +85,32 @@ public class MoveInChecklistController extends Controller {
 		
 		checklistVBox.getChildren().add(0, itemBox);
 		
-		Model model = new Model();
+
 		model.saveMoveInChecklistItem(checklistItem);
 		// Change the view to the add form thingy -> done
 			// save button, assignments(?), name -> done
 		// On save button press,
 			// 1) show on screen -> done 
 			// 2) send info to model to get saved to txt file
-				// Model will use code + grocerylist to save the txt file, that way it can again be loaded in later after login
+				// Model will use code + grocerylist to save the txt file, that way it can again be loaded in later after login -> done
 				// Login code needs to be stored in an accessible class (singleton?) in memory
 					// Likely the login should act like a singleton but there is no need to write the logic to make it one
 	}
 	
 	@FXML
 	public void handleSubBtnClicked(ActionEvent e) {
-		// How do I want this to work? The existance of this button means that the checklist items need to be selectable
+		ChecklistItem toRemove = null;
+		for(ChecklistItem item : checklistItems) {
+			if(item.getContainer().getStyleClass().contains("hbox-active")) {
+				toRemove = item;
+				break;
+			}
+		}
+		
+		if(toRemove == null) return;
+		
+		checklistVBox.getChildren().remove(toRemove.getContainer());
+		checklistItems.remove(toRemove);
+		model.removeMoveInChecklistItem(toRemove);
 	}
 }

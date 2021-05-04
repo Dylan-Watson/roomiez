@@ -24,6 +24,9 @@ public class Model {
 			e.printStackTrace();
 			return;
 		}
-
+	}
+	
+	public void removeMoveInChecklistItem(ChecklistItem item) {
+		// TODO: This
 	}
 }

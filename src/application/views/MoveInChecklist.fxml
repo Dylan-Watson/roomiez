@@ -17,7 +17,7 @@
       </Text>
       <ScrollPane fx:id="checklistPane" layoutY="80.0" prefHeight="200.0" prefWidth="600.0" styleClass="scroll-pane">
          <content>
-	         <VBox fx:id="checklistVBox" spacing="20.0">
+	         <VBox fx:id="checklistVBox">
                <padding>
                   <Insets left="20.0" />
                </padding></VBox>

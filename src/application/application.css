@@ -17,7 +17,7 @@
 .icon-black {
     -fx-background-color: black;
 }
-
+ 
 .icon-grey {
     -fx-background-color: grey;
 }
@@ -54,4 +54,12 @@
 .check-box:selected .box {
 
 -fx-background-color: #264653;
+}
+
+.hbox:hover {
+	-fx-background-color: #315a6a;
+}
+
+.hbox-active {
+	-fx-background-color: #1b323c;
 }
