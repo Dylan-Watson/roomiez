@@ -22,7 +22,7 @@
             <Canvas fx:id="canvas" height="275.0" width="551.0" BorderPane.alignment="CENTER" />
          </center>
          <top>
-            <VBox prefHeight="27.0" prefWidth="566.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="25.0" prefWidth="566.0" BorderPane.alignment="CENTER">
                <children>
                   <MenuBar fx:id="menuBar" prefHeight="25.0" prefWidth="584.0">
                     <menus>
