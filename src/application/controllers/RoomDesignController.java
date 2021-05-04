@@ -10,11 +10,14 @@ import javafx.scene.paint.Color;
 public class RoomDesignController extends Controller
 {
 	@FXML 
-	public Canvas cc;
+	public Canvas canvas = new Canvas();
 	
 	//public void initialize ()
 	//{
-    	private GraphicsContext gc = cc.getGraphicsContext2D();
+		//this.canvas = canvas;
+    	public GraphicsContext gc = canvas.getGraphicsContext2D();
+    	
+
 	//}
     
 	
@@ -28,18 +31,22 @@ public class RoomDesignController extends Controller
 	@FXML
 	public void handleRectangle(ActionEvent e)
 	{
-		System.out.println("Hey!");
+		drawRectangle(gc);
+		System.out.println("Here!");
 		
 	}
 	
-	public void drawRectangle(GraphicsContext gc)
+	private void drawRectangle(GraphicsContext gc)
 	{
-		gc.setFill(Color.GREEN);
-        gc.setStroke(Color.BLUE);
+		
+		gc.setFill(Color.RED);
+		gc.setFill(Color.RED);
+        gc.setStroke(Color.RED);
         gc.setLineWidth(2.0);
-        gc.strokeLine(40, 10, 10, 40);
-        gc.fillOval(10, 60, 30, 30);
-        gc.strokeOval(60, 60, 30, 30);
+        //gc.strokeLine(40, 10, 10, 40);
+        gc.fillOval(10, 10, 30, 30);
+        System.out.println("Should be rectangle here Lol!");
+        //gc.strokeOval(60, 60, 30, 30);
 	}
 }
 
