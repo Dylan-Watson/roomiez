@@ -55,7 +55,11 @@ public class MoveInChecklistController extends Controller {
 			if(text.equals("None") || text.equals("")) return;
 		}
 		
-		ChecklistItem checklistItem = new ChecklistItem(text);
+		HBox itemBox = new HBox();
+		itemBox.setSpacing(30);
+		itemBox.setAlignment(Pos.CENTER_LEFT);
+		
+		ChecklistItem checklistItem = new ChecklistItem(text, itemBox);
 		checklistItems.add(checklistItem);
 		
 		CheckBox cb = new CheckBox();
@@ -66,9 +70,6 @@ public class MoveInChecklistController extends Controller {
 		itemTitle.setFill(Paint.valueOf("#f4a261"));
 		itemTitle.setFont(Font.font("Century Gothic", FontWeight.BOLD, 20));
 		
-		HBox itemBox = new HBox();
-		itemBox.setSpacing(30);
-		itemBox.setAlignment(Pos.CENTER_LEFT);
 		itemBox.getChildren().add(cb);
 		itemBox.getChildren().add(itemTitle);
 		
