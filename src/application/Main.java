@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
  
 public class Main extends Application {
@@ -14,7 +17,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
     	
-    	//BorderPane root = new BorderPane();
     	
     	try {
 			Parent mainParent = FXMLLoader.load(getClass().getResource("/application/views/Main.fxml"));
@@ -29,8 +31,13 @@ public class Main extends Application {
 			Scene moveInChecklistScene = new Scene(moveInChecklistParent,675,425);
 			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
-			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RootLayout.fxml"));
-			Scene roomDesignScene = new Scene(roomDesignParent,675,425);
+			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RoomDesign.fxml"));
+			Canvas canvas = new Canvas(675,425);
+			GraphicsContext GC = canvas.getGraphicsContext2D();
+			GC.strokeText("Hello Canvas", 150, 100);
+			Pane roomDesignCanvas = new Pane();
+			roomDesignCanvas.getChildren().add(canvas);
+			Scene roomDesignScene = new Scene(roomDesignCanvas);
 			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
 			Parent groceryListParent = FXMLLoader.load(getClass().getResource("/application/views/GroceryList.fxml"));
@@ -53,6 +60,5 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
     	
-    	//root.setCenter(new RootLayout());
     }
 }
