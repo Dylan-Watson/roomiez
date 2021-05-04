@@ -32,6 +32,10 @@ public class Main extends Application {
 			Scene moveInChecklistScene = new Scene(moveInChecklistParent,675,425);
 			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
+			Parent ChoreSchParent = FXMLLoader.load(getClass().getResource("/application/views/ChoreSch.fxml"));
+			Scene choreListScene = new Scene(ChoreSchParent,675,425);
+			choreListScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
 			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RoomDesign.fxml"));
 			//Canvas canvas = new Canvas(675,425);
 			//GraphicsContext GC = canvas.getGraphicsContext2D();
@@ -55,6 +59,7 @@ public class Main extends Application {
 			SceneSwitcher.AddScene(moveInChecklistScene, "move");
 			SceneSwitcher.AddScene(roomDesignScene, "room");
 			SceneSwitcher.AddScene(groceryListScene, "grocery");
+			SceneSwitcher.AddScene(choreListScene, "chore");
 
 			
 			primaryStage.setScene(mainScene);

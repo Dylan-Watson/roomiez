@@ -20,4 +20,9 @@ public class HomeController extends Controller{
 	public void handleGroceryListBtnClick(ActionEvent e) {
 		viewChanged("grocery");
 	}
+	
+	@FXML
+	public void ChoreSchBtnClick(ActionEvent e) {
+		viewChanged("chore");
+	}
 }
