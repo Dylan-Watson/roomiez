@@ -24,7 +24,7 @@
             <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="subtractBtn" layoutX="371.0" layoutY="306.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="72.0" style="-fx-background-color: #3caea3;" text="-">
+      <Button fx:id="subtractBtn" layoutX="371.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleSubBtnClicked" prefHeight="71.0" prefWidth="72.0" style="-fx-background-color: #3caea3;" text="-">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>

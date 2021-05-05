@@ -44,7 +44,7 @@ public class RoomDesignController extends Controller
         gc.setStroke(Color.RED);
         gc.setLineWidth(2.0);
         //gc.strokeLine(40, 10, 10, 40);
-        gc.fillOval(500, 100, 100, 100);
+        gc.fillOval(100, 100, 100, 100);
         System.out.println("Should be rectangle here Lol!");
         //gc.strokeOval(60, 60, 30, 30);
 	}
