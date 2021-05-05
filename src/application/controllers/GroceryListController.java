@@ -52,8 +52,10 @@ public class GroceryListController extends Controller{
 			text = result.get();
 			if(text.equals("None") || text.equals("")) return;
 		}
+
+		HBox itemBox = new HBox();
 		
-		ChecklistItem groceryItem = new ChecklistItem(text);
+		ChecklistItem groceryItem = new ChecklistItem(text, itemBox);
 		groceryItems.add(groceryItem);
 		
 		CheckBox cb = new CheckBox();
@@ -64,7 +66,7 @@ public class GroceryListController extends Controller{
 		itemTitle.setFill(Paint.valueOf("#f4a261"));
 		itemTitle.setFont(Font.font("Century Gothic", FontWeight.BOLD, 20));
 		
-		HBox itemBox = new HBox();
+
 		itemBox.setSpacing(30);
 		itemBox.setAlignment(Pos.CENTER_LEFT);
 		itemBox.getChildren().add(cb);
