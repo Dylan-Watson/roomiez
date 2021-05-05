@@ -7,6 +7,7 @@ import application.models.ChecklistItem;
 import application.models.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Dialog;
@@ -26,6 +27,8 @@ public class GroceryListController extends Controller{
 	@FXML public ScrollPane groceryPane;
 	@FXML public VBox groceryVBox;
 	public ArrayList<ChecklistItem> groceryItems = new ArrayList<ChecklistItem>();
+	Model model = new Model();
+
 	
 	@FXML
 	public void handleBackGrocery(ActionEvent e) {
@@ -74,8 +77,9 @@ public class GroceryListController extends Controller{
 		
 		groceryVBox.getChildren().add(0, itemBox);
 		
-		Model model = new Model();
+
 		model.saveMoveInChecklistItem(groceryItem);
+		
 		// Change the view to the add form thingy -> done
 			// save button, assignments(?), name -> done
 		// On save button press,
@@ -84,6 +88,23 @@ public class GroceryListController extends Controller{
 				// Model will use code + grocerylist to save the txt file, that way it can again be loaded in later after login
 				// Login code needs to be stored in an accessible class (singleton?) in memory
 					// Likely the login should act like a singleton but there is no need to write the logic to make it one
+	}
+	
+	@FXML
+	public void handleSubBtnClicked(ActionEvent e) {
+		ChecklistItem toRemove = null;
+		for(ChecklistItem item : groceryItems) {
+			if(item.getContainer().getStyleClass().contains("hbox-active")) {
+				toRemove = item;
+				break;
+			}
+		}
+		
+		if(toRemove == null) return;
+		
+		groceryVBox.getChildren().remove(toRemove.getContainer());
+		groceryItems.remove(toRemove);
+		model.removeMoveInChecklistItem(toRemove);
 	}
 
 }

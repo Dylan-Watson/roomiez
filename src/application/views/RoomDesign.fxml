@@ -19,7 +19,7 @@
       </Text>
       <BorderPane layoutX="17.0" layoutY="64.0" prefHeight="322.0" prefWidth="566.0" style="-fx-border-color: white; -fx-border-radius: 0 0 10 10; -fx-border-width: 2;">
          <center>
-            <Canvas fx:id="canvas" height="275.0" width="551.0" BorderPane.alignment="CENTER" />
+            <Canvas fx:id="canvas" height="273.0" width="551.0" BorderPane.alignment="CENTER" />
          </center>
          <top>
             <VBox prefHeight="25.0" prefWidth="566.0" BorderPane.alignment="CENTER">

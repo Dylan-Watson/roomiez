@@ -34,7 +34,7 @@ public class Main extends Application {
 			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			Parent ChoreSchParent = FXMLLoader.load(getClass().getResource("/application/views/ChoreSch.fxml"));
-			Scene choreListScene = new Scene(ChoreSchParent,675,425);
+			Scene choreListScene = new Scene(ChoreSchParent,850,625);
 			choreListScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RoomDesign.fxml"));
