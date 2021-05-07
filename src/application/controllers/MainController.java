@@ -22,6 +22,10 @@ public class MainController extends Controller {
 	@FXML
 	public Label status;
 	
+	/**
+	 * Takes in user input, checks if room exists
+	 * @param event Click event
+	 */
 	public void PressJoin(ActionEvent event) {
 		String userinput = joinText.getText();
 		if(userinput.equals("codingIsFun")) { //this is for the purpose of the video, will try and incoporate a search
@@ -33,6 +37,10 @@ public class MainController extends Controller {
 		}
 	}
 	
+	/**
+	 * Takes user input, creates a new room
+	 * @param event Click event
+	 */
 	public void PressCreate(ActionEvent event) { 
 		String createinput = createText.getText();
 		if(createinput.equals("codingIsFun")) {	//this is for the purpose of the video, will try and incoporate a search
