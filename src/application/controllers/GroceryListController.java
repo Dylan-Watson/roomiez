@@ -21,7 +21,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
-
+/**
+ * 
+ * Controller for GroceryList.fxml, allows user to add items to a checklist and delete desired items, saves items
+ *
+ */
 public class GroceryListController extends Controller{
 	
 	@FXML public ScrollPane groceryPane;
@@ -29,12 +33,18 @@ public class GroceryListController extends Controller{
 	public ArrayList<ChecklistItem> groceryItems = new ArrayList<ChecklistItem>();
 	Model model = new Model();
 
-	
+	/**
+	 * Handle button click to take user back to home screen
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleBackGrocery(ActionEvent e) {
 		viewChanged("home");
 	}
-	
+	/**
+	 * Handle button click, adds item inputted to dialog screen to checklist
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleAddBtnClicked(ActionEvent e) {
 		Dialog<String> dialog = new TextInputDialog();
@@ -89,7 +99,10 @@ public class GroceryListController extends Controller{
 				// Login code needs to be stored in an accessible class (singleton?) in memory
 					// Likely the login should act like a singleton but there is no need to write the logic to make it one
 	}
-	
+	/**
+	 * Handle button click, removes selected item from checklist
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleSubBtnClicked(ActionEvent e) {
 		ChecklistItem toRemove = null;

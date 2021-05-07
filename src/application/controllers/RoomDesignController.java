@@ -37,11 +37,13 @@ public class RoomDesignController extends Controller
 		gc = canvas.getGraphicsContext2D();
 		root = new Group();
 		scene = null;
-		colorPalette.add("#E0BBE4");
-		colorPalette.add("#957DAD");
-		colorPalette.add("#D291BC");
-		colorPalette.add("#FEC8D8");
-		colorPalette.add("#FFDFD3");
+		colorPalette.add("#fc3838"); //salmon red
+		colorPalette.add("#ff7536"); //orange
+		colorPalette.add("#ffb536"); //yellow
+		colorPalette.add("#54ff65"); //green
+		colorPalette.add("#5e74ff"); //blue
+		colorPalette.add("#94009c"); //purple
+		colorPalette.add("#ffffff"); //white
 	}
 	
 	@FXML
@@ -73,7 +75,7 @@ public class RoomDesignController extends Controller
 	{
 		Rectangle rect = new Rectangle(30,30);
 		pane.getChildren().add(rect);
-		if(currentColor == 5) currentColor = 0;
+		if(currentColor == 7) currentColor = 0;
 		rect.setFill(Paint.valueOf("transparent"));
 		rect.setStroke(Paint.valueOf(colorPalette.get(currentColor)));
 		rect.setStrokeWidth(2.0);
