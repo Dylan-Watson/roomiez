@@ -11,7 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 /**
- * ChoreSchController is a Java class that is the controller for ChoreSch.fxml. Designed to handle inputs of different roommates and chore  responsibilities in a gridpane weekly format.
+ * ChoreSchController [DEPRECATED] is a Java class that is the controller for ChoreSch.fxml. Designed to handle inputs of different roommates and chore  responsibilities in a gridpane weekly format.
  * 
  * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
  * UTSA CS 3443.002 - Final Project

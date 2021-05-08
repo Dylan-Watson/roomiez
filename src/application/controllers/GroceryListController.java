@@ -81,6 +81,10 @@ public class GroceryListController extends Controller implements Initializable {
 	}
 	
 	@FXML
+	/**
+	 * Handles the back button
+	 * @param e JavaFX ActionEvent
+	 */
 	public void handleBackGrocery(ActionEvent e) {
 		viewChanged("home");
 	}
@@ -164,6 +168,11 @@ public class GroceryListController extends Controller implements Initializable {
 		model.updateChecklistItem(groceryItems, Checklist.GROCERY);
 	}
 	
+	/**
+	 * Handles a checklist item being checked
+	 * @param checkedEvent JavaFX ActionEvent
+	 * @param name Name of the checklist item
+	 */
 	public void handleCheckboxCheckedEvent(ActionEvent checkedEvent, String name) {
 		CheckBox cb = (CheckBox) checkedEvent.getSource();
 		boolean checked = cb.isSelected();

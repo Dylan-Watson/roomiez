@@ -22,9 +22,11 @@ import javafx.scene.transform.Translate;
 import javafx.scene.layout.Pane;
 
 /**
- * 
  * Controller for RoomDesign.fxml, allows user to add graphics like rectangles, circles, and line to canvas to mimic room layout.
  *
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
  */
 public class RoomDesignController extends Controller
 {

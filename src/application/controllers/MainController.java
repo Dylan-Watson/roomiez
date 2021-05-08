@@ -8,6 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+/**
+ * MainController is a Java class designed to be a controller for the main/login screen
+ * 
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
+ */
 public class MainController extends Controller {
 	@FXML
 	public TextField joinText;

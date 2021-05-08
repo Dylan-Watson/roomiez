@@ -30,6 +30,9 @@ import javafx.stage.Modality;
 /**
  * MoveInCheckListController is a Java class that is the controller for MoveInChecklist.fxml, handles events
  *
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
  */
 public class MoveInChecklistController extends Controller implements Initializable{
 	
@@ -38,6 +41,10 @@ public class MoveInChecklistController extends Controller implements Initializab
 	public ArrayList<ChecklistItem> checklistItems = new ArrayList<ChecklistItem>();
 	Model model = new Model();
 	
+	/**
+	 * Handle button click to take user back to home screen
+	 * @param event Click event
+	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resources) {
 		ArrayList<ChecklistItem> loadedItems = model.loadChecklistItems(Checklist.MOVEIN);
@@ -164,6 +171,11 @@ public class MoveInChecklistController extends Controller implements Initializab
 		model.updateChecklistItem(checklistItems, Checklist.MOVEIN);
 	}
 
+	/**
+	 * Handles a checklist item being checked
+	 * @param checkedEvent JavaFX ActionEvent
+	 * @param name Name of the checklist item
+	 */
 	public void handleCheckboxCheckedEvent(ActionEvent checkedEvent, String name) {
 		CheckBox cb = (CheckBox) checkedEvent.getSource();
 		boolean checked = cb.isSelected();

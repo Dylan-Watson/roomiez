@@ -8,7 +8,9 @@ import javafx.scene.control.MenuItem;
 /**
  * Controller is a Java class designed to be a parent for all controllers used by the application. 
  * 
- *
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
  */
 public class Controller{
 	

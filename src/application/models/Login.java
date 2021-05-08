@@ -11,23 +11,48 @@ import java.util.Scanner;
 
 import application.controllers.GroceryListController;
 
-
+/**
+ * Login is a Java class designed to manage login functionality
+ * 
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
+ */
 public class Login {
 	private static Scanner x;
 	
 	private static String UserCode;
 	
+	/**
+	 * Constructor
+	 * @param User User access code
+	 */
 	public Login(String User){
 		this.setCode_Name(User);
 	}
+	
+	/**
+	 * Getter for User access code
+	 * @return User Access Code
+	 */
 	public static String getCode_Name() {
 		return UserCode;
 	}
 
+	/**
+	 * Setter for user access code
+	 * @param user User Access Code
+	 */
 	public void setCode_Name(String user) {
 		UserCode = user;
 	}
 	
+	/**
+	 * Method to search for a code in the save file
+	 * @param userinput User code input
+	 * @param FilePath file path to the save file
+	 * @return was the code found
+	 */
 	public boolean SearchForCode (String userinput, String FilePath){
 			boolean found = false;
 			String name = "";
@@ -51,6 +76,11 @@ public class Login {
 			return found;
 		}
 	
+	/**
+	 * Method to create a new user code
+	 * @param userinput User code input
+	 * @param FilePath path to the save file
+	 */
 	public void CreatingNewCode (String userinput, String FilePath){
 		String check = "created";
 		try {

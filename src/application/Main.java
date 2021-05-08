@@ -20,11 +20,20 @@ import javafx.stage.Stage;
  */
 
 public class Main extends Application {
+	
+	/**
+	 * Main entry point of the program
+	 * @param args cmd line args
+	 */
     public static void main(String[] args) {
         launch(args);
     }
-    //this is a test
+    
     @Override
+    /**
+     * Start method of the application
+     * @param primary stage of the application
+     */
     public void start(Stage primaryStage) {
     	
     	

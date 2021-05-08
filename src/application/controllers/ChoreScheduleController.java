@@ -21,6 +21,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+/**
+ * ChoreScheduleController is a Java class designed to be the controller for the chore scheduler view
+ * 
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
+ */
 public class ChoreScheduleController {
 
     @FXML // ResourceBundle that was given to the FXMLLoader
@@ -43,6 +50,10 @@ public class ChoreScheduleController {
     private static boolean loadedFromFile = false;
     
     @FXML // This method is called by the FXMLLoader when initialization is complete
+    /**
+     * FXML Initialize function
+     * @throws FileNotFoundException exception
+     */
     public void initialize() throws FileNotFoundException {
     	//System.out.println("Init");
     	
@@ -72,6 +83,9 @@ public class ChoreScheduleController {
 
     }
     
+    /**
+     * Initializes grid notes
+     */
     private void initGridNodes() {
     	
         for(Node node : this.gridP.getChildren())
@@ -89,6 +103,10 @@ public class ChoreScheduleController {
     }
     
     @FXML
+    /**
+     * Adds a chore to the chore scheduler
+     * @param event FXML ActionEvent arg
+     */
     public void addChore(ActionEvent event) {
     	System.out.println("addchore started");
     	
@@ -111,18 +129,31 @@ public class ChoreScheduleController {
     }
 
     @FXML
+    /**
+     * Removes a chore object 
+     * @param event FXML ActionEvent arg
+     */
     public void remChor(ActionEvent event) {
     	//System.out.println("remove chore");
     }
 
     @FXML
+    /**
+     * Saves the current chores to a file
+     * @param event FXML ActionEvent arg
+     * @throws IOException File write/open exception
+     */
     public void saveToFile(ActionEvent event) throws IOException {
     	
     	ChoreSchedule.saveChoreList(choreListObject.getChoreList());
     	//System.out.println("saved to file");
     }
    
-
+    /**
+     * Adds a chore to the calendar
+     * @param newChore The chore object to add
+     * @param justAdded boolean to represent the adding
+     */
 	protected void addToCal(Chore newChore, boolean justAdded) {
 		//System.out.println("Addto cal, justAdded: "+ justAdded);
 		if (justAdded) {
@@ -150,8 +181,13 @@ public class ChoreScheduleController {
     	
 	}
 	
- 
-
+	/**
+	 * Method to create a button for a chore 
+	 * @param chore Chore to apply to button
+	 * @param row Row location
+	 * @param dayNum Day Location (column)
+	 * @return Button that was created
+	 */
     private Button createButton(Chore chore, int row, int dayNum) {
     	//System.out.println("In add button");
     	Button button = new Button(chore.getLabelName());
@@ -163,6 +199,12 @@ public class ChoreScheduleController {
         return button ;
     }
 
+    /**
+     * Loads a chore from a button
+     * @param node Node to get the button from
+     * @param row Row the button is in
+     * @param dayNum Column location
+     */
 	private void loadChoreFromButton(Node node, int row, int dayNum) {
 		Chore clickedChore = null;
     	//Node node = (Node) event.getSource();

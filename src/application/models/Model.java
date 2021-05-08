@@ -7,13 +7,29 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Model is a Java class designed to hold the data interactions of the application (specifically checklists)
+ * 
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
+ */
 public class Model {
 
+	/**
+	 * Enum to hold checklist types
+	 * @author Dylan Watson
+	 */
 	public enum Checklist {
 		MOVEIN,
 		GROCERY
 	}
 	
+	/**
+	 * Loads in checklist items
+	 * @param checklist Checklist type
+	 * @return ArrayList of checklist items to display
+	 */
 	public ArrayList<ChecklistItem> loadChecklistItems(Checklist checklist) {
 		String code = Login.getCode_Name(); // TODO: Pull the current code from the login system
 		String extension = checklist == Checklist.MOVEIN ? "_movein.csv" : "_grocery.csv";
@@ -63,6 +79,11 @@ public class Model {
 		}
 	}
 	
+	/**
+	 * Updates a checklist item in the CSV
+	 * @param items ArrayList of items to write
+	 * @param checklist type of checklist
+	 */
 	public void updateChecklistItem(ArrayList<ChecklistItem> items, Checklist checklist) {
 		String code = Login.getCode_Name(); // TODO: Pull the current code from the login system
 		String extension = checklist == Checklist.MOVEIN ? "_movein.csv" : "_grocery.csv";

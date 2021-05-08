@@ -20,6 +20,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
 
+/**
+ * EnterChoreController is a Java class designed to hold a chore item
+ * 
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
+ */
 public class EnterChoreController {
 
     @FXML
@@ -63,6 +70,10 @@ public class EnterChoreController {
     
     
     @FXML
+    /**
+     * Submits information
+     * @param event JavaFX ActionEvent
+     */
     public void submitInfo(ActionEvent event) {
     	ArrayList<ToggleButton> weekDaysArray = new ArrayList<>();
     	weekDaysArray.add(m);
@@ -111,12 +122,17 @@ public class EnterChoreController {
     }
 
     @FXML
+    /**
+     * DEPRECATED
+     * @param event JavaFX ActionEvent
+     */
     public void tempSceneSelect(ActionEvent event) {
 
     }
 
 
 	/**
+	 * Accessor for the previous stage
 	 * @return the prevStage
 	 */
 	public Stage getPrevStage() {
@@ -124,6 +140,7 @@ public class EnterChoreController {
 	}
 
 	/**
+	 * Setter for the previous stage
 	 * @param prevStage the prevStage to set
 	 */
 
@@ -131,6 +148,10 @@ public class EnterChoreController {
 		this.prevStage = prevStage;
 	}
 	
+	/**
+	 * Loads the chore with data
+	 * @param currChore The current chore
+	 */
 	void loadWithData(Chore currChore) {
 //		ArrayList<ToggleButton> weekDaysArray = new ArrayList<>();
 //    	weekDaysArray.add(m);
