@@ -1,5 +1,6 @@
 package application.controllers;
 
+import application.models.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,16 +10,12 @@ import javafx.scene.control.TextField;
 public class MainController extends Controller {
 	@FXML
 	public TextField joinText;
-	
 	@FXML
 	public TextField createText;
-	
 	@FXML
 	public Button createButton;
-	
 	@FXML
 	public Button JoinButton;
-	
 	@FXML
 	public Label status;
 	
@@ -27,8 +24,10 @@ public class MainController extends Controller {
 	 * @param event Click event
 	 */
 	public void PressJoin(ActionEvent event) {
-		String userinput = joinText.getText();
-		if(userinput.equals("codingIsFun")) { //this is for the purpose of the video, will try and incoporate a search
+
+		String joinInput = joinText.getText();
+		Login code = new Login("data");
+		if(code.SearchForCode(joinInput , "data/login/UsersForApp.csv")) { 
 			status.setText("Status: Joining Room");
 			viewChanged("home");
 		}
@@ -43,7 +42,8 @@ public class MainController extends Controller {
 	 */
 	public void PressCreate(ActionEvent event) { 
 		String createinput = createText.getText();
-		if(createinput.equals("codingIsFun")) {	//this is for the purpose of the video, will try and incoporate a search
+		Login code = new Login("data");
+		if(code.SearchForCode(createinput , "data/login/UsersForApp.csv")) {	//this is for the purpose of the video, will try and incoporate a search
 			status.setText("Status: Room Already Exist Please Join");
 		}
 		else {
