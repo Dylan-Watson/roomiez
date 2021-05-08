@@ -48,6 +48,7 @@ public class MainController extends Controller {
 		}
 		else {
 		status.setText("Status: Creating Room");
+		code.CreatingNewCode(createinput , "data/login/UsersForApp.csv");
 		viewChanged("home");
 		}
 	}

@@ -1,8 +1,12 @@
 package application.models;
 
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 
@@ -22,7 +26,7 @@ public class Login {
 		UserCode = user;
 	}
 	
-		public boolean SearchForCode (String userinput, String FilePath){
+	public boolean SearchForCode (String userinput, String FilePath){
 			boolean found = false;
 			String name = "";
 			String created = "";
@@ -37,7 +41,6 @@ public class Login {
 						found = true;
 						return found;
 					}
-					System.out.println(name);
 				}
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -45,4 +48,19 @@ public class Login {
 			
 			return found;
 		}
+	
+	public void CreatingNewCode (String userinput, String FilePath){
+		String check = "created";
+		try {
+			FileWriter fw = new FileWriter(FilePath , true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			
+			pw.println(userinput + "," + check);
+			pw.flush();
+			pw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
