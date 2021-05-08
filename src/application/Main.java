@@ -1,10 +1,13 @@
 package application;
 
+import java.util.ArrayList;
+
+import application.models.Chore;
+import application.models.ChoreSchedule;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
  
 public class Main extends Application {
@@ -18,9 +21,18 @@ public class Main extends Application {
     	//BorderPane root = new BorderPane();
     	
     	try {
-			Parent mainParent = FXMLLoader.load(getClass().getResource("/application/views/Main.fxml"));
+    		
+    		Parent mainParent = FXMLLoader.load(getClass().getResource("/application/views/Main.fxml"));
 			Scene mainScene = new Scene(mainParent,675,425);
 			mainScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+    		
+    		Parent choreScheduleParent = FXMLLoader.load(getClass().getResource("/application/views/ChoreSchedule.fxml"));
+			Scene choreScene = new Scene(choreScheduleParent,675,425);
+			choreScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
+			Parent enterChoreParent = FXMLLoader.load(getClass().getResource("/application/views/ChoreEntry.fxml"));
+			Scene enterChoreScene = new Scene(enterChoreParent,360,520);
+			enterChoreScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			Parent homeParent = FXMLLoader.load(getClass().getResource("/application/views/HomeScreen.fxml"));
 			Scene homeScene = new Scene(homeParent,675,425);
@@ -40,9 +52,10 @@ public class Main extends Application {
 			SceneSwitcher.AddScene(homeScene, "home");
 			SceneSwitcher.AddScene(moveInChecklistScene, "move");
 			SceneSwitcher.AddScene(roomDesignScene, "room");
+			SceneSwitcher.AddScene(choreScene, "chore");
+			SceneSwitcher.AddScene(enterChoreScene, "entChore");
 
-			
-			primaryStage.setScene(roomDesignScene);
+			primaryStage.setScene(mainScene);
 			primaryStage.show();
 		
 		} catch(Exception e) {
@@ -51,4 +64,13 @@ public class Main extends Application {
     	
     	//root.setCenter(new RootLayout());
     }
+    
+    public ChoreSchedule currChoreList() {
+    	ChoreSchedule currChoreList = new ChoreSchedule();
+    	
+    	
+		return currChoreList;
+	}
+    
+    
 }

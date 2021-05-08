@@ -2,11 +2,8 @@ package application.models;
 
 import java.io.IOException;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Point2D;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class DragIcon extends AnchorPane{
