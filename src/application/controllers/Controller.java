@@ -21,7 +21,10 @@ public class Controller{
 		String selection = ((MenuItem)event.getSource()).getText();
 		viewChanged(selection);
 	}
-	
+	/**
+	 * Takes user to scene that is passed
+	 * @param selection Desired scene to switch to
+	 */
 	public void viewChanged(String selection) {
 		SceneSwitcher.SwitchScenes(selection);
 	}

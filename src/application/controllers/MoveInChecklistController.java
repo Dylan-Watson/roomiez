@@ -27,8 +27,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
-
-public class MoveInChecklistController extends Controller implements Initializable {
+/**
+ * MoveInCheckListController is a Java class that is the controller for MoveInChecklist.fxml, handles events
+ *
+ */
+public class MoveInChecklistController extends Controller {
 	
 	@FXML public ScrollPane checklistPane;
 	@FXML public VBox checklistVBox;
@@ -73,11 +76,18 @@ public class MoveInChecklistController extends Controller implements Initializab
 		}
 	}
 	
+	/**
+	 *Takes user back to home screen
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleBackMove(ActionEvent e) {
 		viewChanged("home");
 	}
-
+	/**
+	 * Handle button click, adds item inputted to dialog screen to checklist
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleAddBtnClicked(ActionEvent e) {
 		Dialog<String> dialog = new TextInputDialog();
@@ -133,7 +143,10 @@ public class MoveInChecklistController extends Controller implements Initializab
 
 		model.addChecklistItem(checklistItem, Checklist.MOVEIN);
 	}
-	
+	/**
+	 * Handle button click, removes selected item from checklist
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleSubBtnClicked(ActionEvent e) {
 		ChecklistItem toRemove = null;

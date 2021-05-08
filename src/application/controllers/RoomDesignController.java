@@ -21,7 +21,11 @@ import javafx.scene.transform.Scale;
 import javafx.scene.transform.Translate;
 import javafx.scene.layout.Pane;
 
-
+/**
+ * 
+ * Controller for RoomDesign.fxml, allows user to add graphics like rectangles, circles, and line to canvas to mimic room layout.
+ *
+ */
 public class RoomDesignController extends Controller
 {
 	@FXML public Canvas canvas;
@@ -31,19 +35,28 @@ public class RoomDesignController extends Controller
 	private Scene scene;
 	private ArrayList<String> colorPalette = new ArrayList<String>();
 	private int currentColor = 0;
-	
+	/**
+	 * 
+	 * On start up creates colorPalette, gets graphics, sets root group
+	 *
+	 */
 	@FXML
 	public void initialize() {
 		gc = canvas.getGraphicsContext2D();
 		root = new Group();
 		scene = null;
-		colorPalette.add("#E0BBE4");
-		colorPalette.add("#957DAD");
-		colorPalette.add("#D291BC");
-		colorPalette.add("#FEC8D8");
-		colorPalette.add("#FFDFD3");
+		colorPalette.add("#fc3838"); //salmon red
+		colorPalette.add("#ff7536"); //orange
+		colorPalette.add("#ffb536"); //yellow
+		colorPalette.add("#54ff65"); //green
+		colorPalette.add("#5e74ff"); //blue
+		colorPalette.add("#94009c"); //purple
+		colorPalette.add("#ffffff"); //white
 	}
-	
+	/**
+	 * Populates rectangle on secondary click
+	 * @param event Click event
+	 */
 	@FXML
 	public void handlePaneMouseMoved(MouseEvent event) { // TODO: This is a really bad way of doing this, but it does work
 		if(scene == null) {
@@ -56,24 +69,33 @@ public class RoomDesignController extends Controller
 			});
 		}
 	}
-	
+	/**
+	 * Takes user to home screen
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleBackMenu(ActionEvent e)
 	{
 		viewChanged("home");
 	}
-	
+	/**
+	 *Calls drawRectangle
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleRectangle(ActionEvent e)
 	{
 		drawRectangle(gc, null); // TODO: Fix this
 	}
-	
+	/**
+	 * Populates rectangle, allows user to scale rectangle up or down with left click, allows user to move rectangle with middle click. Rotates through colorPalette on each call
+	 * @param Graphics and click event
+	 */
 	private void drawRectangle(GraphicsContext gc, MouseEvent e)
 	{
 		Rectangle rect = new Rectangle(30,30);
 		pane.getChildren().add(rect);
-		if(currentColor == 5) currentColor = 0;
+		if(currentColor == 7) currentColor = 0;
 		rect.setFill(Paint.valueOf("transparent"));
 		rect.setStroke(Paint.valueOf(colorPalette.get(currentColor)));
 		rect.setStrokeWidth(2.0);
@@ -102,13 +124,19 @@ public class RoomDesignController extends Controller
         });
 		currentColor++;
 	}
-	
+	/**
+	 *Calls drawCircle
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleCircle(ActionEvent e)
 	{
 		drawCircle(gc, null); // TODO: Fix this
 	}
-	
+	/**
+	 * Populates circle, allows user to scale circle up or down with left click, allows user to move circle with middle click. Rotates through colorPalette on each call
+	 * @param Graphics and click event
+	 */
 	private void drawCircle(GraphicsContext gc, MouseEvent e)
 	{
 		Circle circle = new Circle(15);
@@ -142,13 +170,19 @@ public class RoomDesignController extends Controller
         });
 		currentColor++;
 	}
-	
+	/**
+	 *Calls drawLine
+	 * @param event Click event
+	 */
 	@FXML
 	public void handleLine(ActionEvent e)
 	{
 		drawLine(gc, null); // TODO: Fix this
 	}
-	
+	/**
+	 * Populates Line, allows user to scale line up or down with left click, allows user to move line with middle click. Rotates through colorPalette on each call
+	 * @param Graphics and click event
+	 */
 	private void drawLine(GraphicsContext gc, MouseEvent e)
 	{
 		Line line = new Line(60, 120, 90, 120);

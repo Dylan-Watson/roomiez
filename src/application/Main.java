@@ -11,6 +11,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
  
+/**
+ * Main is a Java class that sets up the primary stage, links views and scenes
+ * 
+ * @author Dylan Watson (kgv351), Madeline Morales (ayv697), Jacob Ricondo (jgv856), Daniel Lugo-Diaz (hfp629), Stephanie Connolly (pwr781)
+ * UTSA CS 3443.002 - Final Project
+ * Spring 2021
+ */
+
 public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
@@ -38,14 +46,7 @@ public class Main extends Application {
 			choreListScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RoomDesign.fxml"));
-			//Canvas canvas = new Canvas(675,425);
-			//GraphicsContext GC = canvas.getGraphicsContext2D();
-			//GC.setLineWidth(3.0);
-			//GC.setFill(Color.DARKSEAGREEN);
-			//GC.strokeRect(10, 10, 50, 50);
-			//Pane roomDesignCanvas = new Pane();
-			//roomDesignCanvas.getChildren().add(canvas);
-			//Scene roomDesignScene = new Scene(roomDesignCanvas);
+
 			Scene roomDesignScene = new Scene(roomDesignParent,600,425);
 			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
