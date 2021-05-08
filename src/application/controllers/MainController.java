@@ -26,7 +26,8 @@ public class MainController extends Controller {
 	public void PressJoin(ActionEvent event) {
 
 		String joinInput = joinText.getText();
-		Login code = new Login("data");
+		String data = joinInput;
+		Login code = new Login(data);
 		if(code.SearchForCode(joinInput , "data/login/UsersForApp.csv")) { 
 			status.setText("Status: Joining Room");
 			viewChanged("home");
@@ -42,7 +43,8 @@ public class MainController extends Controller {
 	 */
 	public void PressCreate(ActionEvent event) { 
 		String createinput = createText.getText();
-		Login code = new Login("data");
+		String data = createinput;
+		Login code = new Login(data);
 		if(code.SearchForCode(createinput , "data/login/UsersForApp.csv")) {	//this is for the purpose of the video, will try and incoporate a search
 			status.setText("Status: Room Already Exist Please Join");
 		}
