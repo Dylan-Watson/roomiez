@@ -12,7 +12,14 @@ public class ChecklistItem {
 		this.name = name;
 		this.container = container;
 		this.checked = false;
-		this.selected = true;
+		this.selected = false;
+	}
+	
+	public ChecklistItem(String name, HBox container, boolean checked) {
+		this.name = name;
+		this.container = container;
+		this.checked = checked;
+		this.selected = false;
 	}
 	
 	public void setChecked(boolean checked) {

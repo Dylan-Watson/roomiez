@@ -1,12 +1,17 @@
 package application.controllers;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.ResourceBundle;
+
 import application.SceneSwitcher;
 import application.models.ChecklistItem;
 import application.models.Model;
+import application.models.Model.Checklist;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.CheckBox;
@@ -22,13 +27,51 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 
-public class GroceryListController extends Controller{
+public class GroceryListController extends Controller implements Initializable{
+	// TODO: Combine this and MoveInChecklist using polymorphism
 	
 	@FXML public ScrollPane groceryPane;
 	@FXML public VBox groceryVBox;
 	public ArrayList<ChecklistItem> groceryItems = new ArrayList<ChecklistItem>();
 	Model model = new Model();
 
+	@Override
+	public void initialize(URL url, ResourceBundle resources) {
+		ArrayList<ChecklistItem> loadedItems = model.loadChecklistItems(Checklist.GROCERY);
+		for(ChecklistItem loadedItem : loadedItems) {
+			HBox itemBox = new HBox();
+			itemBox.setSpacing(30);
+			itemBox.setAlignment(Pos.CENTER_LEFT);
+			itemBox.getStyleClass().add("hbox");
+			itemBox.setPrefWidth(400);
+			itemBox.setPadding(new Insets(0,10,0,10));
+			itemBox.setOnMouseClicked(clickEvent -> {
+				for(ChecklistItem item : groceryItems)
+					item.getContainer().getStyleClass().remove("hbox-active");
+				((HBox)(clickEvent.getSource())).getStyleClass().add("hbox-active");
+			});
+			
+			loadedItem.setContainer(itemBox);
+			
+			CheckBox cb = new CheckBox();
+			cb.setAllowIndeterminate(false);
+			cb.getStyleClass().add("check-box");
+			cb.setSelected(loadedItem.getChecked());
+			cb.setOnAction(checkedEvent -> {
+				handleCheckboxCheckedEvent(checkedEvent, loadedItem.getName());
+			});
+			
+			Text itemTitle = new Text(loadedItem.getName());
+			itemTitle.setFill(Paint.valueOf("#f4a261"));
+			itemTitle.setFont(Font.font("Century Gothic", FontWeight.BOLD, 20));
+			
+			itemBox.getChildren().add(cb);
+			itemBox.getChildren().add(itemTitle);
+			
+			groceryVBox.getChildren().add(0, itemBox);
+			groceryItems.add(loadedItem);
+		}
+	}
 	
 	@FXML
 	public void handleBackGrocery(ActionEvent e) {
@@ -55,39 +98,40 @@ public class GroceryListController extends Controller{
 			text = result.get();
 			if(text.equals("None") || text.equals("")) return;
 		}
-
-		HBox itemBox = new HBox();
 		
-		ChecklistItem groceryItem = new ChecklistItem(text, itemBox);
-		groceryItems.add(groceryItem);
+		HBox itemBox = new HBox();
+		itemBox.setSpacing(30);
+		itemBox.setAlignment(Pos.CENTER_LEFT);
+		itemBox.getStyleClass().add("hbox");
+		itemBox.setPrefWidth(400);
+		itemBox.setPadding(new Insets(0,10,0,10));
+		itemBox.setOnMouseClicked(clickEvent -> {
+			for(ChecklistItem item : groceryItems)
+				item.getContainer().getStyleClass().remove("hbox-active");
+			((HBox)(clickEvent.getSource())).getStyleClass().add("hbox-active");
+		});
+		
+		ChecklistItem checklistItem = new ChecklistItem(text, itemBox);
+		groceryItems.add(checklistItem);
 		
 		CheckBox cb = new CheckBox();
 		cb.setAllowIndeterminate(false);
 		cb.getStyleClass().add("check-box");
+		cb.setOnAction(checkedEvent -> {
+			handleCheckboxCheckedEvent(checkedEvent, checklistItem.getName());
+		});
 		
 		Text itemTitle = new Text(text);
 		itemTitle.setFill(Paint.valueOf("#f4a261"));
 		itemTitle.setFont(Font.font("Century Gothic", FontWeight.BOLD, 20));
 		
-
-		itemBox.setSpacing(30);
-		itemBox.setAlignment(Pos.CENTER_LEFT);
 		itemBox.getChildren().add(cb);
 		itemBox.getChildren().add(itemTitle);
 		
 		groceryVBox.getChildren().add(0, itemBox);
 		
 
-		model.saveMoveInChecklistItem(groceryItem);
-		
-		// Change the view to the add form thingy -> done
-			// save button, assignments(?), name -> done
-		// On save button press,
-			// 1) show on screen -> done 
-			// 2) send info to model to get saved to txt file
-				// Model will use code + grocerylist to save the txt file, that way it can again be loaded in later after login
-				// Login code needs to be stored in an accessible class (singleton?) in memory
-					// Likely the login should act like a singleton but there is no need to write the logic to make it one
+		model.addChecklistItem(checklistItem, Checklist.GROCERY);
 	}
 	
 	@FXML
@@ -104,7 +148,24 @@ public class GroceryListController extends Controller{
 		
 		groceryVBox.getChildren().remove(toRemove.getContainer());
 		groceryItems.remove(toRemove);
-		model.removeMoveInChecklistItem(toRemove);
+		model.updateChecklistItem(groceryItems, Checklist.GROCERY);
+	}
+	
+	public void handleCheckboxCheckedEvent(ActionEvent checkedEvent, String name) {
+		CheckBox cb = (CheckBox) checkedEvent.getSource();
+		boolean checked = cb.isSelected();
+		ChecklistItem affectedItem = null;
+		for(ChecklistItem item : groceryItems) {
+			if(item.getName().equals(name))
+				affectedItem = item;
+		}
+		if(affectedItem == null) {
+			System.out.println("There was an error!");
+			cb.setSelected(!checked);
+			return;
+		}
+		affectedItem.setChecked(checked);
+		model.updateChecklistItem(groceryItems, Checklist.GROCERY);
 	}
 
 }

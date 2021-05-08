@@ -17,10 +17,11 @@
       </Text>
       <ScrollPane fx:id="checklistPane" layoutY="80.0" prefHeight="200.0" prefWidth="600.0" styleClass="scroll-pane">
          <content>
-	         <VBox fx:id="checklistVBox">
+	        <VBox fx:id="checklistVBox">
                <padding>
                   <Insets left="20.0" />
-               </padding></VBox>
+               </padding>
+       		</VBox>
          </content>
       </ScrollPane>
       <Button fx:id="addBtn" layoutX="156.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleAddBtnClicked" prefHeight="51.0" prefWidth="72.0" style="-fx-background-color: #3caea3;" text="+">
