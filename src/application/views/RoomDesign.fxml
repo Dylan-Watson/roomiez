@@ -29,10 +29,6 @@
                       <Menu mnemonicParsing="false" text="Tools">
                         <items>
                           <MenuItem mnemonicParsing="false" onAction="#handleBackMenu" text="Back" />
-                              <MenuItem mnemonicParsing="false" text="Resize" />
-                              <MenuItem mnemonicParsing="false" text="Move" />
-                              <MenuItem mnemonicParsing="false" text="Change Color" />
-                              <MenuItem mnemonicParsing="false" text="Delete" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Shapes">

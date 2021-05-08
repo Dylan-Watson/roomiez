@@ -9,16 +9,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import application.controllers.GroceryListController;
+
 
 public class Login {
 	private static Scanner x;
 	
-	private String UserCode;
+	private static String UserCode;
 	
 	public Login(String User){
 		this.setCode_Name(User);
 	}
-	public String getCode_Name() {
+	public static String getCode_Name() {
 		return UserCode;
 	}
 

@@ -2,6 +2,9 @@ package application;
 
 import java.util.ArrayList;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -17,6 +20,16 @@ public class SceneSwitcher {
 	private static Stage primaryStage; // Primary stage of the application
 	
 	private static ArrayList<SceneContainer> scenes = new ArrayList<SceneContainer>(); // ArrayList to contain all scenes in the application
+	
+	private static Application application;
+	
+	/**
+	 * Setter for the Application variable of the project
+	 * @param _application Application (Main.java) instance
+	 */
+	public static void SetApplication(Application _application) {
+		application = _application;
+	}
 	
 	/**
 	 * Accessor method for the primaryStage variable
@@ -53,6 +66,41 @@ public class SceneSwitcher {
 				primaryStage.setScene(container.scene);
 				primaryStage.show();
 			}
+		}
+	}
+	
+	/**
+	 * Method to initialize all pages that exist behind the login. This allows for the pages to run their initialization a group code has been established
+	 */
+	public static void InitializeBackScenes() {
+		try { 
+			Parent homeParent = FXMLLoader.load(application.getClass().getResource("/application/views/HomeScreen.fxml"));
+			Scene homeScene = new Scene(homeParent,675,425);
+			homeScene.getStylesheets().add(application.getClass().getResource("application.css").toExternalForm());			
+			
+			Parent moveInChecklistParent = FXMLLoader.load(application.getClass().getResource("/application/views/MoveInChecklist.fxml"));
+			Scene moveInChecklistScene = new Scene(moveInChecklistParent,675,425);
+			moveInChecklistScene.getStylesheets().add(application.getClass().getResource("application.css").toExternalForm());
+			
+			Parent ChoreSchParent = FXMLLoader.load(application.getClass().getResource("/application/views/ChoreSch.fxml"));
+			Scene choreListScene = new Scene(ChoreSchParent,850,625);
+			choreListScene.getStylesheets().add(application.getClass().getResource("application.css").toExternalForm());
+			
+			Parent roomDesignParent = FXMLLoader.load(application.getClass().getResource("/application/views/RoomDesign.fxml"));
+			Scene roomDesignScene = new Scene(roomDesignParent,600,425);
+			roomDesignScene.getStylesheets().add(application.getClass().getResource("application.css").toExternalForm());
+	
+			Parent groceryListParent = FXMLLoader.load(application.getClass().getResource("/application/views/GroceryList.fxml"));
+			Scene groceryListScene = new Scene(groceryListParent,675,425);
+			groceryListScene.getStylesheets().add(application.getClass().getResource("application.css").toExternalForm());
+			
+			SceneSwitcher.AddScene(homeScene, "home");
+			SceneSwitcher.AddScene(moveInChecklistScene, "move");
+			SceneSwitcher.AddScene(roomDesignScene, "room");
+			SceneSwitcher.AddScene(groceryListScene, "grocery");
+			SceneSwitcher.AddScene(choreListScene, "chore");
+		} catch (Exception e) {
+			System.out.println("There was an error!");
 		}
 	}
 	

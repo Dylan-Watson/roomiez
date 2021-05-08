@@ -33,37 +33,11 @@ public class Main extends Application {
 			Scene mainScene = new Scene(mainParent,675,425);
 			mainScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
-			Parent homeParent = FXMLLoader.load(getClass().getResource("/application/views/HomeScreen.fxml"));
-			Scene homeScene = new Scene(homeParent,675,425);
-			homeScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());			
-			
-			Parent moveInChecklistParent = FXMLLoader.load(getClass().getResource("/application/views/MoveInChecklist.fxml"));
-			Scene moveInChecklistScene = new Scene(moveInChecklistParent,675,425);
-			moveInChecklistScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			
-			Parent ChoreSchParent = FXMLLoader.load(getClass().getResource("/application/views/ChoreSch.fxml"));
-			Scene choreListScene = new Scene(ChoreSchParent,850,625);
-			choreListScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			
-			Parent roomDesignParent = FXMLLoader.load(getClass().getResource("/application/views/RoomDesign.fxml"));
-
-			Scene roomDesignScene = new Scene(roomDesignParent,600,425);
-			roomDesignScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-
-			Parent groceryListParent = FXMLLoader.load(getClass().getResource("/application/views/GroceryList.fxml"));
-			Scene groceryListScene = new Scene(groceryListParent,675,425);
-			groceryListScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			
 			// Add all of the scenes to the scene switcher
+			SceneSwitcher.SetApplication(this);
 			SceneSwitcher.SetRoot(primaryStage);
 			SceneSwitcher.AddScene(mainScene, "main");
-			SceneSwitcher.AddScene(homeScene, "home");
-			SceneSwitcher.AddScene(moveInChecklistScene, "move");
-			SceneSwitcher.AddScene(roomDesignScene, "room");
-			SceneSwitcher.AddScene(groceryListScene, "grocery");
-			SceneSwitcher.AddScene(choreListScene, "chore");
 
-			
 			primaryStage.setScene(mainScene);
 			primaryStage.show();
 		

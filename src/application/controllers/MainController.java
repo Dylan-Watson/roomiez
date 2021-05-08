@@ -1,5 +1,6 @@
 package application.controllers;
 
+import application.SceneSwitcher;
 import application.models.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,9 +28,14 @@ public class MainController extends Controller {
 
 		String joinInput = joinText.getText();
 		String data = joinInput;
+		if(data.equals("")) {
+			status.setText("Status: Input a code!");
+			return;
+		}
 		Login code = new Login(data);
 		if(code.SearchForCode(joinInput , "data/login/UsersForApp.csv")) { 
 			status.setText("Status: Joining Room");
+			SceneSwitcher.InitializeBackScenes();
 			viewChanged("home");
 		}
 		else {
@@ -44,14 +50,19 @@ public class MainController extends Controller {
 	public void PressCreate(ActionEvent event) { 
 		String createinput = createText.getText();
 		String data = createinput;
+		if(data.equals("")) {
+			status.setText("Status: Input a code!");
+			return;
+		}
 		Login code = new Login(data);
 		if(code.SearchForCode(createinput , "data/login/UsersForApp.csv")) {	//this is for the purpose of the video, will try and incoporate a search
 			status.setText("Status: Room Already Exist Please Join");
 		}
 		else {
-		status.setText("Status: Creating Room");
-		code.CreatingNewCode(createinput , "data/login/UsersForApp.csv");
-		viewChanged("home");
+			status.setText("Status: Creating Room");
+			code.CreatingNewCode(createinput , "data/login/UsersForApp.csv");
+			SceneSwitcher.InitializeBackScenes();
+			viewChanged("home");
 		}
 	}
 }

@@ -15,7 +15,7 @@ public class Model {
 	}
 	
 	public ArrayList<ChecklistItem> loadChecklistItems(Checklist checklist) {
-		String code = "abc123"; // TODO: Pull the current code from the login system
+		String code = Login.getCode_Name(); // TODO: Pull the current code from the login system
 		String extension = checklist == Checklist.MOVEIN ? "_movein.csv" : "_grocery.csv";
 		
 		try {
@@ -43,7 +43,7 @@ public class Model {
 	 * @param ChecklistItem
 	 */
 	public void addChecklistItem(ChecklistItem item, Checklist checklist) {
-		String code = "abc123"; // TODO: Pull the current code from the login system
+		String code = Login.getCode_Name(); // TODO: Pull the current code from the login system
 		String extension = checklist == Checklist.MOVEIN ? "_movein.csv" : "_grocery.csv";
 		
 		File saveFile = null;
@@ -64,7 +64,7 @@ public class Model {
 	}
 	
 	public void updateChecklistItem(ArrayList<ChecklistItem> items, Checklist checklist) {
-		String code = "abc123"; // TODO: Pull the current code from the login system
+		String code = Login.getCode_Name(); // TODO: Pull the current code from the login system
 		String extension = checklist == Checklist.MOVEIN ? "_movein.csv" : "_grocery.csv";
 		
 		File saveFile = null;
