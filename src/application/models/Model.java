@@ -38,12 +38,11 @@ public class Model {
 		}
 	}
 	
-	public void addChecklistItem(ChecklistItem item, Checklist checklist) {
 	/**
 	 *Passes ChecklistItem to .csv file for saving 
 	 * @param ChecklistItem
 	 */
-	public void saveMoveInChecklistItem(ChecklistItem item) {
+	public void addChecklistItem(ChecklistItem item, Checklist checklist) {
 		String code = "abc123"; // TODO: Pull the current code from the login system
 		String extension = checklist == Checklist.MOVEIN ? "_movein.csv" : "_grocery.csv";
 		

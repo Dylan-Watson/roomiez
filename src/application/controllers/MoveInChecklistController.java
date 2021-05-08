@@ -31,7 +31,7 @@ import javafx.stage.Modality;
  * MoveInCheckListController is a Java class that is the controller for MoveInChecklist.fxml, handles events
  *
  */
-public class MoveInChecklistController extends Controller {
+public class MoveInChecklistController extends Controller implements Initializable{
 	
 	@FXML public ScrollPane checklistPane;
 	@FXML public VBox checklistVBox;

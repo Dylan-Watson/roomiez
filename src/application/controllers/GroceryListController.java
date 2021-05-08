@@ -31,7 +31,7 @@ import javafx.stage.Modality;
  * Controller for GroceryList.fxml, allows user to add items to a checklist and delete desired items, saves items
  *
  */
-public class GroceryListController extends Controller{
+public class GroceryListController extends Controller implements Initializable {
 	
 	@FXML public ScrollPane groceryPane;
 	@FXML public VBox groceryVBox;
