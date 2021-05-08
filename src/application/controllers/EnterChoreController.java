@@ -23,47 +23,47 @@ import javafx.stage.Stage;
 public class EnterChoreController {
 
     @FXML
-    private TextField roomMate;
+    public TextField roomMate;
 
     @FXML
-    private TextField calLabel;
+    public TextField calLabel;
 
     @FXML
-    private TextField dayNum;//TODO delete
+    public TextField dayNum;//TODO delete
 
     @FXML
-    private TextField choreName;
+    public TextField choreName;
 
     @FXML
-    private TextField choreNum;
+    public TextField choreNum;
    
     @FXML
-    private ColorPicker colorPicker;
+    public ColorPicker colorPicker;
 
     @FXML
-    private Button enter;
+    public Button enter;
     
     @FXML
-    private ToggleButton m;
+    public ToggleButton m;
     @FXML
-    private ToggleButton t;
+    public ToggleButton t;
     @FXML
-    private ToggleButton w;
+    public ToggleButton w;
     @FXML
-    private ToggleButton r;
+    public ToggleButton r;
     @FXML
-    private ToggleButton f;
+    public ToggleButton f;
     @FXML
-    private ToggleButton sa;
+    public ToggleButton sa;
     @FXML
-    private ToggleButton su;
+    public ToggleButton su;
    
     
     private Stage prevStage;
     
     
     @FXML
-    void submitInfo(ActionEvent event) {
+    public void submitInfo(ActionEvent event) {
     	ArrayList<ToggleButton> weekDaysArray = new ArrayList<>();
     	weekDaysArray.add(m);
     	weekDaysArray.add(t);
@@ -111,7 +111,7 @@ public class EnterChoreController {
     }
 
     @FXML
-    void tempSceneSelect(ActionEvent event) {
+    public void tempSceneSelect(ActionEvent event) {
 
     }
 

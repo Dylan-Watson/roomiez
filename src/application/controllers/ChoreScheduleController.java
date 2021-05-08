@@ -24,16 +24,16 @@ import javafx.stage.Stage;
 public class ChoreScheduleController {
 
     @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
+    public ResourceBundle resources;
 
     @FXML // fx:id="addBtn"
-    private Button addBtn; // Value injected by FXMLLoader
+    public Button addBtn; // Value injected by FXMLLoader
 
     @FXML // fx:id="subBtn"
-    private Button subBtn; // Value injected by FXMLLoader
+    public Button subBtn; // Value injected by FXMLLoader
     
     @FXML
-    private GridPane gridP;
+    public GridPane gridP;
 
     //private ArrayList<Chore> choreList = new ArrayList<>();
     private Label labelsM[] = new Label[6];
@@ -43,7 +43,7 @@ public class ChoreScheduleController {
     private static boolean loadedFromFile = false;
     
     @FXML // This method is called by the FXMLLoader when initialization is complete
-    void initialize() throws FileNotFoundException {
+    public void initialize() throws FileNotFoundException {
     	//System.out.println("Init");
     	
     	initGridNodes();
@@ -89,7 +89,7 @@ public class ChoreScheduleController {
     }
     
     @FXML
-    void addChore(ActionEvent event) {
+    public void addChore(ActionEvent event) {
     	System.out.println("addchore started");
     	
     	Node node = (Node) event.getSource();
@@ -111,12 +111,12 @@ public class ChoreScheduleController {
     }
 
     @FXML
-    void remChor(ActionEvent event) {
+    public void remChor(ActionEvent event) {
     	//System.out.println("remove chore");
     }
 
     @FXML
-    void saveToFile(ActionEvent event) throws IOException {
+    public void saveToFile(ActionEvent event) throws IOException {
     	
     	ChoreSchedule.saveChoreList(choreListObject.getChoreList());
     	//System.out.println("saved to file");

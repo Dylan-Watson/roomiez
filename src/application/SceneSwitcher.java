@@ -93,14 +93,24 @@ public class SceneSwitcher {
 			Parent groceryListParent = FXMLLoader.load(application.getClass().getResource("/application/views/GroceryList.fxml"));
 			Scene groceryListScene = new Scene(groceryListParent,675,425);
 			groceryListScene.getStylesheets().add(application.getClass().getResource("application.css").toExternalForm());
-			
+		
+			Parent ChoreScheduleParent = FXMLLoader.load(application.getClass().getResource("/application/views/ChoreSchedule.fxml"));
+			Scene ChoreScheduleScene = new Scene(ChoreScheduleParent,675,425);
+			ChoreScheduleScene.getStylesheets().add(application.getClass().getResource("application.css").toExternalForm());
+
+			Parent ChoreEntryParent = FXMLLoader.load(application.getClass().getResource("/application/views/ChoreEntry.fxml"));
+			Scene ChoreEntryScene = new Scene(ChoreEntryParent,675,425);
+			ChoreEntryScene.getStylesheets().add(application.getClass().getResource("application.css").toExternalForm());
+
 			SceneSwitcher.AddScene(homeScene, "home");
 			SceneSwitcher.AddScene(moveInChecklistScene, "move");
 			SceneSwitcher.AddScene(roomDesignScene, "room");
 			SceneSwitcher.AddScene(groceryListScene, "grocery");
-			SceneSwitcher.AddScene(choreListScene, "chore");
+			SceneSwitcher.AddScene(ChoreScheduleScene, "chore");
+			SceneSwitcher.AddScene(ChoreEntryScene, "entChore");
 		} catch (Exception e) {
 			System.out.println("There was an error!");
+			e.printStackTrace();
 		}
 	}
 	
